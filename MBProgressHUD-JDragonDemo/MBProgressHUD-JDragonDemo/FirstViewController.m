@@ -19,7 +19,7 @@
 @implementation FirstViewController
 -(NSArray*)titleArray
 {
-    return @[@"window加载弹窗",@"view加载弹窗",@"window展示信息",@"view展示信息",@"成功展示弹窗",@"警告展示弹窗",@"错误展示弹窗",@"信息展示弹窗"];
+    return @[@"window加载弹窗",@"view加载弹窗",@"window展示信息",@"view展示信息",@"成功展示弹窗",@"警告展示弹窗",@"错误展示弹窗",@"信息展示弹窗",@"我要换行"];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +45,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 9;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -82,6 +82,9 @@
             break;
         case 7:
             [MBProgressHUD showInfoMessage:@"显示信息"];
+            break;
+        case 8:
+            [MBProgressHUD showInfoMessage:@"我要换行我要换行我要换行我要换行我要换行我要换行我要换行"];
             break;
             
         default:

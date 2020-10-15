@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MBProgressHUD+JDragon"
-  s.version      = "0.0.5"
-  s.summary      = "MBProgressHUD 封装"
+  s.version      = "0.0.6"
+  s.summary      = "MBProgressHUD 封装（forked from lyc59621/MBProgressHUD-JDragon）"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  MBProgressHUD 简单封装
+  MBProgressHUD 简单封装（forked from lyc59621/MBProgressHUD-JDragon）
                    DESC
 
-  s.homepage     = "https://github.com/lyc59621//MBProgressHUD-JDragon"
+  s.homepage     = "https://github.com/zhaxling/MBProgressHUD-JDragon"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-   s.platform     = :ios, "8.0"
+   s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "MBProgressHUD+JDragon/MBProgressHUD+JDragon.bundle"
+#  s.resources = "MBProgressHUD+JDragon/MBProgressHUD+JDragon.bundle"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -122,7 +122,8 @@ Pod::Spec.new do |s|
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-  s.dependency  'MBProgressHUD', '~> 0.9.2'
+  # s.dependency  'MBProgressHUD', '~> 0.9.2'
+  s.dependency  'MBProgressHUD'
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

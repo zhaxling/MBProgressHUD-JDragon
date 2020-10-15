@@ -14,10 +14,13 @@
 {
     UIView  *view = isWindow? (UIView*)[UIApplication sharedApplication].delegate.window:[self getCurrentUIVC].view;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText=message?message:@"加载中.....";
-    hud.labelFont=[UIFont systemFontOfSize:15];
+    hud.detailsLabel.text = message?message:@"";
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.bezelView.blurEffectStyle = UIBlurEffectStyleDark;
     hud.removeFromSuperViewOnHide = YES;
-    hud.dimBackground = NO;
+    hud.detailsLabel.font = [UIFont systemFontOfSize:18.0];
+    hud.bezelView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6];
+    hud.contentColor = [UIColor whiteColor];
     return hud;
 }
 #pragma mark-------------------- show Tip----------------------------
@@ -42,7 +45,7 @@
 {
     MBProgressHUD *hud = [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
     hud.mode = MBProgressHUDModeText;
-    [hud hide:YES afterDelay:aTimer];
+    [hud hideAnimated:YES afterDelay:aTimer];
 }
 #pragma mark-------------------- show Activity----------------------------
 
@@ -67,7 +70,7 @@
     MBProgressHUD *hud  =  [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
     hud.mode = MBProgressHUDModeIndeterminate;
     if (aTimer>0) {
-        [hud hide:YES afterDelay:aTimer];
+        [hud hideAnimated:YES afterDelay:aTimer];
     }
 }
 #pragma mark-------------------- show Image----------------------------
@@ -105,15 +108,15 @@
 {
     MBProgressHUD *hud  =  [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconName]];
-    hud.mode = MBProgressHUDModeCustomView;
-    [hud hide:YES afterDelay:2];
+    hud.mode = MBProgressHUDModeText;
+    [hud hideAnimated:YES afterDelay:2];
     
 }
 + (void)hideHUD
 {
     UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
-    [self hideAllHUDsForView:winView animated:YES];
-    [self hideAllHUDsForView:[self getCurrentUIVC].view animated:YES];
+    [self hideHUDForView:winView animated:YES];
+    [self hideHUDForView:[self getCurrentUIVC].view animated:YES];
 }
 #pragma mark --- 获取当前Window试图---------
 //获取当前屏幕显示的viewcontroller
