@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MBProgressHUD+JDragon"
-  s.version      = "0.0.6"
+  s.version      = "0.1.0"
   s.summary      = "MBProgressHUD 封装（forked from lyc59621/MBProgressHUD-JDragon）"
 
   # This description is used to generate tags and improve search results.
